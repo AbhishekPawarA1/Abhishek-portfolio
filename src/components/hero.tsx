@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 
-import bgVideo from "../global/4k Video ｜ Technology Looped Background ｜ No Copyright Loop Background Video.webm";
+// ✅ FIXED: proper Vite asset handling (NO bundling issue)
+const bgVideo = new URL(
+  "../global/4k Video ｜ Technology Looped Background ｜ No Copyright Loop Background Video.webm",
+  import.meta.url,
+).href;
 
 export function Hero() {
   return (
