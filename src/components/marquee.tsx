@@ -43,6 +43,7 @@ export function Marquee() {
         {[...items, ...items].map((item, index) => (
           <motion.div
             key={index}
+            data-click-sound
             whileHover={{
               y: -5,
               scale: 1.05,
@@ -52,7 +53,7 @@ export function Marquee() {
               stiffness: 260,
               damping: 18,
             }}
-            className="group relative flex items-center gap-3 rounded-full border border-border bg-card/40 px-6 py-3 backdrop-blur-xl transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]"
+            className="group relative flex cursor-pointer items-center gap-3 rounded-full border border-border bg-card/40 px-6 py-3 backdrop-blur-xl transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]"
           >
             {/* Hover Glow */}
             <div className="absolute inset-0 rounded-full bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -81,6 +82,7 @@ export function Marquee() {
         {[...items.slice().reverse(), ...items.slice().reverse()].map((item, index) => (
           <motion.div
             key={index}
+            data-click-sound
             whileHover={{
               y: -5,
               scale: 1.05,
@@ -90,7 +92,7 @@ export function Marquee() {
               stiffness: 260,
               damping: 18,
             }}
-            className="group relative flex items-center gap-3 rounded-full border border-border bg-card/40 px-6 py-3 backdrop-blur-xl transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]"
+            className="group relative flex cursor-pointer items-center gap-3 rounded-full border border-border bg-card/40 px-6 py-3 backdrop-blur-xl transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]"
           >
             {/* Hover Glow */}
             <div className="absolute inset-0 rounded-full bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

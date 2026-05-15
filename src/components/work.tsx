@@ -95,6 +95,7 @@ export function Work() {
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
+              data-click-sound
               initial={{
                 opacity: 0,
                 y: 50,
