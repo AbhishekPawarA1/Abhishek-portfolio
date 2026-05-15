@@ -156,3 +156,62 @@
     color: transparent;
   }
 }
+
+/* Custom cursor — desktop only (enabled via .custom-cursor-active on html) */
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.custom-cursor-ring,
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 9999px;
+  will-change: transform, opacity, width, height;
+  transition:
+    opacity 0.2s ease,
+    width 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.custom-cursor-ring {
+  border: 1.5px solid oklch(0.97 0.01 80 / 55%);
+  background: oklch(0.72 0.18 40 / 6%);
+  box-shadow:
+    0 0 0 1px oklch(0 0 0 / 20%),
+    0 0 28px oklch(0.72 0.18 40 / 18%);
+}
+
+.custom-cursor-ring.is-hover {
+  border-color: oklch(0.72 0.18 40 / 85%);
+  background: oklch(0.72 0.18 40 / 12%);
+  box-shadow:
+    0 0 0 1px oklch(0.72 0.18 40 / 25%),
+    0 0 36px oklch(0.72 0.18 40 / 35%);
+}
+
+.custom-cursor-ring.is-click {
+  border-color: oklch(0.97 0.01 80 / 90%);
+  transform-origin: center;
+}
+
+.custom-cursor-dot {
+  background: oklch(0.97 0.01 80);
+  box-shadow: 0 0 12px oklch(0.72 0.18 40 / 50%);
+}
+
+.custom-cursor-dot.is-hover {
+  background: oklch(0.72 0.18 40);
+}
+
+.custom-cursor-dot.is-click {
+  background: oklch(0.97 0.01 80);
+  box-shadow: 0 0 20px oklch(0.72 0.18 40 / 70%);
+}

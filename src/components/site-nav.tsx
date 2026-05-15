@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BrandMark } from "@/components/brand-mark";
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -75,13 +76,15 @@ export function SiteNav() {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}>
               <Link
                 to="/"
-                className="group relative flex items-center gap-2 overflow-hidden rounded-full border border-foreground/20 px-5 py-2.5 text-sm tracking-wide transition-all duration-500 hover:border-primary"
+                className="group relative flex items-center gap-3 overflow-hidden rounded-full border border-foreground/20 py-2 pl-2 pr-5 text-sm tracking-wide transition-all duration-500 hover:border-primary"
               >
                 {/* Hover Glow */}
                 <span className="absolute inset-0 bg-primary/10 opacity-0 transition-all duration-500 group-hover:opacity-100" />
 
                 {/* Shine */}
                 <span className="absolute -left-[120%] top-0 h-full w-[120%] rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 group-hover:left-[130%]" />
+
+                <BrandMark size="sm" className="relative z-10 transition-transform duration-300 group-hover:scale-105" />
 
                 <span className="relative z-10 font-medium">Abhishek Pawar</span>
 
