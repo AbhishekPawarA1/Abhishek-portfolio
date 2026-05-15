@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 
-// ✅ FIXED: proper Vite asset handling (NO bundling issue)
-const bgVideo = new URL(
-  "../global/4k Video ｜ Technology Looped Background ｜ No Copyright Loop Background Video.webm",
-  import.meta.url,
-).href;
+import bgVideo from "../global/4k Video ｜ Technology Looped Background ｜ No Copyright Loop Background Video.webm";
 
 export function Hero() {
   return (
@@ -100,18 +96,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-10 sm:mt-16 grid md:grid-cols-2 gap-8 md:gap-10 items-end"
         >
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed">
-            I'm <span className="text-white font-semibold">Abhishek Pawar</span>, a{" "}
-            <span className="text-white font-semibold">Full Stack Developer (SDE I)</span> at{" "}
-            <span className="text-white font-semibold">Sheshi.AI</span> with{" "}
-            <span className="text-white font-semibold">1.2+ years of experience</span> building
-            scalable, high-performance web applications using{" "}
-            <span className="text-white">React</span>, <span className="text-white">Node.js</span>,{" "}
-            <span className="text-white">MongoDB</span>, <span className="text-white">SQL</span>,
-            and <span className="text-white">RESTful APIs</span>. Experienced in developing{" "}
-            <span className="text-white">AI-driven solutions</span>, designing{" "}
-            <span className="text-white">real-time systems</span>, and optimizing application
-            performance for seamless user experiences.
+          <p className="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
+            I'm <span className="text-white">Abhishek Pawar</span>, an SDE I at Sheshi.AI with 1.2+
+            years building scalable, high-performance web applications using{" "}
+            <span className="text-white">React</span>, <span className="text-white">Node.js</span>,
+            RESTful APIs and AI-driven solutions.
           </p>
 
           <div className="flex flex-wrap gap-4 md:justify-end">
