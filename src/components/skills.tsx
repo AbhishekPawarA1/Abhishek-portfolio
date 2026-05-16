@@ -82,8 +82,7 @@ export function Skills() {
                       style={{ transform: `translateY(calc(var(--outer) * -1))` }}
                     >
                       <div
-                        data-click-sound
-                        className="cursor-pointer rounded-xl sm:rounded-2xl border border-border bg-background/90 backdrop-blur px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-3 flex items-center gap-1.5 sm:gap-2 shadow-lg hover:border-primary hover:scale-110 transition-all"
+                        className="rounded-xl sm:rounded-2xl border border-border bg-background/90 backdrop-blur px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-3 flex items-center gap-1.5 sm:gap-2 shadow-lg hover:border-primary hover:scale-110 transition-all"
                         style={{ transform: `rotate(${-angle}deg)` }}
                       >
                         <span className="text-sm sm:text-base md:text-xl">{s.icon}</span>
@@ -112,8 +111,7 @@ export function Skills() {
                       style={{ transform: `translateY(calc(var(--inner) * -1))` }}
                     >
                       <div
-                        data-click-sound
-                        className="cursor-pointer rounded-lg sm:rounded-xl border border-primary/30 bg-card px-2 py-1 sm:px-3 sm:py-2 flex items-center gap-1.5 sm:gap-2 shadow-md"
+                        className="rounded-lg sm:rounded-xl border border-primary/30 bg-card px-2 py-1 sm:px-3 sm:py-2 flex items-center gap-1.5 sm:gap-2 shadow-md"
                         style={{ transform: `rotate(${-angle}deg)` }}
                       >
                         <span className="text-xs sm:text-sm md:text-base">{s.icon}</span>

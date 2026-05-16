@@ -33,12 +33,23 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = [
-    { label: "Work", href: "#work" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
+  const sectionLinks = [
+    { label: "Work", href: "/#work" },
+    { label: "About", href: "/#about" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Contact", href: "/#contact" },
   ];
+
+  const navLinkClass =
+    "group relative overflow-hidden rounded-full px-5 py-2.5 text-sm text-foreground/75 transition-all duration-300 hover:text-primary";
+
+  const navLinkDecor = (
+    <>
+      <span className="absolute inset-0 scale-0 rounded-full bg-primary/10 transition-transform duration-300 group-hover:scale-100" />
+      <span className="absolute inset-0 rounded-full opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100 bg-primary/20" />
+      <span className="absolute -left-[120%] top-0 h-full w-[120%] rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-1000 group-hover:left-[130%]" />
+    </>
+  );
 
   return (
     <>
@@ -94,33 +105,34 @@ export function SiteNav() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-2">
-              {links.map((link, i) => (
+              {sectionLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  whileHover={{
-                    y: -3,
-                  }}
-                  whileTap={{
-                    scale: 0.96,
-                  }}
-                  className="group relative overflow-hidden rounded-full px-5 py-2.5 text-sm text-foreground/75 transition-all duration-300 hover:text-primary"
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.96 }}
+                  className={navLinkClass}
                 >
-                  {/* Hover Background */}
-                  <span className="absolute inset-0 scale-0 rounded-full bg-primary/10 transition-transform duration-300 group-hover:scale-100" />
-
-                  {/* Glow */}
-                  <span className="absolute inset-0 rounded-full opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100 bg-primary/20" />
-
-                  {/* Shine */}
-                  <span className="absolute -left-[120%] top-0 h-full w-[120%] rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-1000 group-hover:left-[130%]" />
-
+                  {navLinkDecor}
                   <span className="relative z-10">{link.label}</span>
                 </motion.a>
               ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: sectionLinks.length * 0.08 }}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <Link to="/resume" className={navLinkClass}>
+                  {navLinkDecor}
+                  <span className="relative z-10">Resume</span>
+                </Link>
+              </motion.div>
             </nav>
 
             {/* Desktop CTA */}
@@ -215,7 +227,7 @@ export function SiteNav() {
             <div className="pointer-events-none absolute inset-0 bg-primary/5 blur-3xl" />
 
             <div className="relative flex flex-col gap-3">
-              {links.map((link, i) => (
+              {sectionLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
@@ -223,25 +235,35 @@ export function SiteNav() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  whileHover={{
-                    x: 4,
-                  }}
-                  whileTap={{
-                    scale: 0.97,
-                  }}
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.97 }}
                   className="group relative flex items-center justify-between overflow-hidden rounded-2xl border border-border px-5 py-4 text-foreground/80 transition-all duration-300 hover:border-primary hover:text-primary"
                 >
-                  {/* Hover Background */}
                   <span className="absolute inset-0 bg-primary/5 opacity-0 transition-all duration-300 group-hover:opacity-100" />
-
-                  {/* Shine */}
                   <span className="absolute -left-[120%] top-0 h-full w-[120%] rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-1000 group-hover:left-[130%]" />
-
                   <span className="relative z-10">{link.label}</span>
-
                   <ArrowUpRight className="relative z-10 size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </motion.a>
               ))}
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: sectionLinks.length * 0.08 }}
+                whileHover={{ x: 4 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  to="/resume"
+                  onClick={() => setOpen(false)}
+                  className="group relative flex items-center justify-between overflow-hidden rounded-2xl border border-border px-5 py-4 text-foreground/80 transition-all duration-300 hover:border-primary hover:text-primary"
+                >
+                  <span className="absolute inset-0 bg-primary/5 opacity-0 transition-all duration-300 group-hover:opacity-100" />
+                  <span className="absolute -left-[120%] top-0 h-full w-[120%] rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-1000 group-hover:left-[130%]" />
+                  <span className="relative z-10">Resume</span>
+                  <ArrowUpRight className="relative z-10 size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </Link>
+              </motion.div>
 
               {/* Mobile CTA */}
               <motion.a

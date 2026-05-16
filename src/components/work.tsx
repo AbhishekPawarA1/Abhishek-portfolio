@@ -95,7 +95,6 @@ export function Work() {
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
-              data-click-sound
               initial={{
                 opacity: 0,
                 y: 50,
@@ -116,7 +115,7 @@ export function Work() {
                 y: -8,
                 scale: 1.015,
               }}
-              className="group relative overflow-hidden rounded-3xl border border-border bg-card/50 p-6 sm:p-8 md:p-10 backdrop-blur-xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] cursor-pointer"
+              className="group relative overflow-hidden rounded-3xl border border-border bg-card/50 p-6 sm:p-8 md:p-10 backdrop-blur-xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]"
             >
               {/* Animated Glow */}
               <motion.div

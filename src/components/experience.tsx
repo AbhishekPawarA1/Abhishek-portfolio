@@ -122,7 +122,6 @@ export function Experience() {
 
                 {/* Left Card */}
                 <motion.div
-                  data-click-sound
                   whileHover={{
                     y: -6,
                   }}
@@ -130,7 +129,7 @@ export function Experience() {
                     type: "spring",
                     stiffness: 220,
                   }}
-                  className="ml-12 md:ml-0 group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/50 p-6 sm:p-8 backdrop-blur-xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]"
+                  className="ml-12 md:ml-0 group relative overflow-hidden rounded-3xl border border-border bg-card/50 p-6 sm:p-8 backdrop-blur-xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]"
                 >
                   {/* Animated Gradient */}
                   <motion.div
@@ -192,7 +191,6 @@ export function Experience() {
                   {it.bullets.map((b, idx) => (
                     <motion.div
                       key={b}
-                      data-click-sound
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -203,7 +201,7 @@ export function Experience() {
                       whileHover={{
                         x: 6,
                       }}
-                      className="group flex cursor-pointer gap-4 rounded-2xl border border-transparent bg-background/30 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card/40"
+                      className="group flex gap-4 rounded-2xl border border-transparent bg-background/30 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card/40"
                     >
                       <div className="mt-0.5 text-primary">
                         <Sparkles className="size-4" />
